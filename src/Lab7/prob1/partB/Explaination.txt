@@ -1,0 +1,9 @@
+This code is incorrect because it is not override the right "equals" method.
+So we need to rewrite the "equals" method in Employee class like below:
+    @Override
+	public boolean equals(Object ob) {
+		if(ob==null) return false;
+		if(!(ob instanceof Employee)) return false;
+		Employee e = (Employee) ob;
+		return name.equals(e.name) && salary == e.salary;
+	}

@@ -1,0 +1,7 @@
+This code is incorrect because there is no implementation for "hashCode()" method in Employee class
+while HashMap<Employee, Employee> is being used in EmployeeInfo class.
+So we need to write implementation for "hashCode()" method in Employee class like below:
+    @Override
+	public int hashCode(){
+		return Objects.hash(name,salary);
+	}

@@ -1,5 +1,6 @@
 package Lab9.prob5;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 public class Problem {
@@ -7,7 +8,10 @@ public class Problem {
 	//Returns a list of those strings which belong to both of the two input lists
 	public static List<String> elementsInBoth(List<String> list1, List<String> list2) {
 		//implement
-		return null;
+		return list1.stream()
+				.distinct()
+				.filter(x -> list2.contains(x))
+				.collect(Collectors.toList());
 	}
 	
 	//Returns a list, in sorted order, of the zipcodes, of those Customers 
@@ -16,7 +20,12 @@ public class Problem {
 	//duplicate elements.
 	public static List<String> getZipsOfSpecialCustomers(List<Customer> list) {
 		//implement
-		return null;
+		return list.stream()
+				.filter(c -> c.getCity().length() >= 6 && !c.getCity().contains(""+'e'))
+				.sorted(Comparator.comparing((Customer c) -> c.getZip()))
+				.map((Customer c) -> c.getZip())
+				.distinct()
+				.collect(Collectors.toList());
 	}
 	
 	

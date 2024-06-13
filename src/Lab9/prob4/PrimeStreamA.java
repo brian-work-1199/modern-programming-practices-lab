@@ -1,13 +1,11 @@
 package Lab9.prob4;
 
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Main {
+public class PrimeStreamA {
     public static void main(String[] args) {
-        Stream<Integer> primes = Stream.iterate(2, n -> nextPrime(n))
-                .limit(5);
-        primes.forEach(System.out::println);
+        Stream.iterate(2, n -> nextPrime(n))
+                .limit(5).forEach(System.out::println);
     }
 
     static int nextPrime(int n) {

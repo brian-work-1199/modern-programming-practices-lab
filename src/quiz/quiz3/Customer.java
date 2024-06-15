@@ -1,4 +1,4 @@
-package quiz3;
+package quiz.quiz3;
 
 public class Customer {
     private int id;

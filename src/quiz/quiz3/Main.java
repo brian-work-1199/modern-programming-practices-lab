@@ -1,7 +1,8 @@
-package quiz3;
+package quiz.quiz3;
 
 import java.util.Arrays;
 import java.util.List;
+import quiz.quiz3.Customer;
 
 public class Main {
     public static void main(String[] args) {

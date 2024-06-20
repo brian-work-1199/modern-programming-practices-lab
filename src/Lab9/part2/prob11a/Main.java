@@ -20,14 +20,22 @@ public class Main {
 		                  new Employee("Alice", "Richards", 101000),
 		                  new Employee("Donald", "Trump", 100000));
 		
-		  System.out.println(
-				  emps.stream()
-						  .filter(employee -> employee.getSalary() > 100000)
-						  .filter(employee -> employee.getLastName().compareToIgnoreCase("N") >= 0)
-						  .map(employee -> employee.getFirstName() + " " + employee.getLastName())
-						  .sorted()
-						  .collect(Collectors.joining(", "))
-		  );
+//		  System.out.println(
+//				  emps.stream()
+//						  .filter(employee -> employee.getSalary() > 100000)
+//						  .filter(employee -> employee.getLastName().compareToIgnoreCase("N") >= 0)
+//						  .map(employee -> employee.getFirstName() + " " + employee.getLastName())
+//						  .sorted()
+//						  .collect(Collectors.joining(", "))
+//		  );
+		System.out.println(
+				emps.stream()
+						.filter(employee -> employee.getSalary() > 100000)
+						.filter(employee -> employee.getLastName().toCharArray()[0] >= 'N' && employee.getLastName().toCharArray()[0] <= 'Z')
+						.map(employee -> employee.getFirstName() + " " + employee.getLastName())
+						.sorted()
+						.collect(Collectors.joining(", "))
+		);
 	}
 	
 	

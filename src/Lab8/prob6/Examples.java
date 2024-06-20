@@ -28,6 +28,9 @@ public class Examples {
     //C. (String s1,String s2) -> s1.compareTo(s2)
     BiFunction<String, String, Integer> c1 = (String s1, String s2) -> s1.compareTo(s2);
     BiFunction<String, String, Integer>  c2 = String::compareTo;
+
+    Comparator<String> f = String::compareTo;
+
     //Method reference type: Class::instanceMethod
 
     //D. (Integer x,Integer y) -> Math.pow(x,y)

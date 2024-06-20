@@ -13,6 +13,8 @@ public class Main {
 		List<String> stringList = Arrays.asList("cba", "efg", "doe", "fie", "set");
 		//expected output: [cba, fie, doe, efg, set]
 		ordering2(stringList);
+
+		System.out.println(Math.signum(intList.get(0)));
 		
 	}
 	

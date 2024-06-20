@@ -12,13 +12,17 @@ public class ForEachExample {
 				"Away", "On Vacation", "Everywhere you want to be");
 		
 		//print each element of the list in upper case format
-		list.forEach(consumer);
+		list.forEach(str -> System.out.println(str.toUpperCase()));
+		list.forEach(ForEachExample::accect);
+	}
+	public static void accect(String s){
+		System.out.println(s.toUpperCase());
 	}
 	//implement a Consumer
-	static Consumer<String> consumer = new Consumer<String>() {
-		@Override
-		public void accept(String s) {
-			System.out.println(s.toUpperCase());
-		}
-	};
+//	static Consumer<String> consumer = new Consumer<String>() {
+//		@Override
+//		public void accept(String s) {
+//			System.out.println(s.toUpperCase());
+//		}
+//	};
 }

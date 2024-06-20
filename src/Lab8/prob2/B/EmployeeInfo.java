@@ -6,7 +6,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class EmployeeInfo {
-	
+
+	//local inner class
 	public void sort(List<Employee> emps) {
 		Collections.sort(emps, (e1,e2) -> {
 			int compareResult = e1.name.compareTo(e2.name);
@@ -18,6 +19,7 @@ public class EmployeeInfo {
 			return compareResult;
 		});
 	}
+
 	
 	public static void main(String[] args) {
 		List<Employee> emps = new ArrayList<>();

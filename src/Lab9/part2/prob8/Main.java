@@ -22,6 +22,15 @@ public class Main {
 		}
 		return false;
 	}
+
+	private boolean findProduct1(String prodName){
+		return orderItems.stream()
+				.map(orderItem -> Optional.ofNullable(orderItem)
+						.map(OrderItem::getProduct)
+						.map(Product::getProductName)
+						.orElse(""))
+				.anyMatch(x -> x.equals(prodName));
+	}
 	
 	private void loadOrderItemData() {
 		orderItems.add(new OrderItem(new Product("1016", "Tools", 131.00), 3));

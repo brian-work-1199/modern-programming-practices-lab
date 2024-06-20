@@ -15,20 +15,56 @@ main method and use it to output a random number to the console. The behavior
 should be the same as in part ii.
  */
 public class B {
+    //member inner class
+    class MySupplier implements Supplier<Double>{
+        public Double get(){
+            return Math.random();
+        }
+    }
+
+    void createMemberInner(){
+        Supplier<Double> supplier = new MySupplier();
+        System.out.println(supplier.get());
+    }
+
+    //Local inner class
+    public void mySupplierLocal(){
+        class MySupplierLocal implements Supplier<Double>{
+            public Double get(){ return Math.random();}
+        }
+
+        Supplier<Double> supplier = new MySupplierLocal();
+        System.out.println(supplier.get());
+    }
+
+    //static inner class
+    static class MySupplierStatic implements Supplier<Double>{
+        public Double get(){
+            return Math.random();
+        }
+    }
+
     public static void main(String[] args){
         //b.i and b.ii
-
         Supplier<Double> f = () -> Math.random();
         System.out.println(f.get());
 
-        //b.iii
-        class MySupplier implements Supplier<Double>{
-            public Double get(){
+        //b.iii member inner class
+        (new B()).createMemberInner();
+
+        //anonymous inner class
+        Supplier<Double> lambda = new Supplier<Double>() {
+            @Override
+            public Double get() {
                 return Math.random();
             }
-        }
-        MySupplier mySupplier = new MySupplier();
-        System.out.println(mySupplier.get());
+        };
+        System.out.println(lambda.get());
 
+        //call method using local inner class
+        (new B()).mySupplierLocal();
+
+        //static inner class
+        (new MySupplierStatic()).get();
     }
 }
